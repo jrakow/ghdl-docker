@@ -44,10 +44,12 @@ WORKDIR /src
 
 ENV RUN_DEPENDENCIES \
 	gcc \
+	git \
 	lcov \
 	libgnat-5 \
 	make \
 	python3 \
+	ssh \
 	xsltproc \
 	zlib1g-dev
 RUN apt-get autoremove --purge --yes ${DEV_DEPENDENCIES} && \
