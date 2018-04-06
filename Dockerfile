@@ -14,14 +14,6 @@ ENV DEV_DEPENDENCIES \
 	python3-setuptools \
 	wget \
 	zlib1g-dev
-ENV RUN_DEPENDENCIES \
-	gcc \
-	lcov \
-	libgnat-5 \
-	make \
-	python3 \
-	xsltproc \
-	zlib1g-dev
 
 RUN apt-get update && \
 	apt-get install --yes --no-install-recommends ${DEV_DEPENDENCIES}
@@ -50,6 +42,14 @@ RUN pip3 install junitparser
 
 WORKDIR /src
 
+ENV RUN_DEPENDENCIES \
+	gcc \
+	lcov \
+	libgnat-5 \
+	make \
+	python3 \
+	xsltproc \
+	zlib1g-dev
 RUN apt-get autoremove --purge --yes ${DEV_DEPENDENCIES} && \
 	apt-get install --yes --no-install-recommends ${RUN_DEPENDENCIES}
 
